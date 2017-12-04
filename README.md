@@ -1,9 +1,9 @@
 
-## Languages
+## Languages challenge list
 
 - Javascript ✅
 - Python ✅
-- Rust
+- Rust ✅
 - Haskell
 - Java
 - Scala
