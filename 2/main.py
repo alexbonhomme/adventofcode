@@ -1,5 +1,10 @@
 #!/usr/bin/env python
 
+# input = [
+#   "5\t9\t2\t8",
+#   "9\t4\t7\t3",
+#   "3\t8\t6\t5",
+# ]
 input = [
   "1236	741	557	1029	144	101	1968	2159	1399	80	1139	1167	1695	82	90	2236",
   "2134	106	107	1025	584	619	191	496	80	352	351	2267	1983	1973	97	1244",
@@ -19,6 +24,8 @@ input = [
   "66	87	176	107	2791	109	21	92	3016	2239	1708	3175	3210	2842	446	484",
 ]
 
+# Part 1
+
 checksum = 0
 for row in input:
   numberRow = list(map(lambda c: int(c), row.split("\t")))
@@ -30,4 +37,18 @@ for row in input:
 
   checksum += diff
 
-print checksum
+print "Part 1 : ", checksum
+
+# Part 2
+
+def computeValueOrZero(n, data):
+  return reduce((lambda acc, x: (acc + (n / x)) if (n != x and n % x == 0) else acc), data, 0)
+
+checksumPart2 = 0
+for row in input:
+  numberRow = list(map(lambda c: int(c), row.split("\t")))
+
+  checksumRow = reduce((lambda acc, x: acc + computeValueOrZero(x, numberRow)), numberRow, 0)
+  checksumPart2 += checksumRow
+
+print "Part 2 : ", checksumPart2
