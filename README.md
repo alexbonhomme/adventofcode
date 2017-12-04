@@ -1,8 +1,8 @@
 
 ## Languages
 
-- Javascript
-- Python
+- Javascript ✅
+- Python ✅
 - Rust
 - Haskell
 - Java
